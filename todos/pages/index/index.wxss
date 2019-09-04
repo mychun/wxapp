@@ -1,0 +1,42 @@
+.top{
+  margin-bottom: 30rpx;
+  border: 1rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5rpx #e0e0e0;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.top image{ height: 41rpx; width: 41rpx; margin-right: 20rpx;}
+.top input{ font-size: 28rpx; flex-grow: 1}
+
+.middle{
+  border:1rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5rpx #e0e0e0;
+}
+.item{
+  padding: 20rpx;
+  border-top: 1px solid #e0e0e0;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.item:first-child{ border-top: none}
+.checkbox{ margin-right: 20rpx;}
+.item .name{ flex-grow: 1;font-size: 30rpx;
+color: #444;
+}
+.middle .item.completed .name {
+text-decoration: line-through;
+color: #888;
+}
+.bottom{ display: flex; align-content: center;}
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  margin: 30rpx 0;
+  padding: 0 10rpx;
+  font-size: 26rpx;
+  color: #777;
+}

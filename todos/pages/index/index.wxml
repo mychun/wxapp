@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="top">
+    <image src="../../assets/plus.png"></image>
+    <input type="text" placeholder="Anything here..." />
+  </view>
+  <view class="middle">
+    <view class="item completed">
+      <icon class="checkbox" type="success"></icon>
+      <text class="name">sf</text>
+      <icon class="remove" size="16" type="clear"></icon>
+    </view>
+    <view class="item">
+      <icon class="checkbox" type="circle"></icon>
+      <text class="name">sf</text>
+      <icon class="remove" size="16" type="clear"></icon>
+    </view>
+    <view class="item">
+      <icon class="checkbox" type="circle"></icon>
+      <text class="name">sf</text>
+      <icon class="remove" size="16" type="clear"></icon>
+    </view>
+  </view>
+  <view class="bottom">
+    <text>Toggle all</text>
+    <text>1 item left</text>
+    <text>Clear completed</text>
+  </view>
+</view>
