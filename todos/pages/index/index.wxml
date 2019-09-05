@@ -1,28 +1,31 @@
 <view class="container">
   <view class="top">
-    <image src="../../assets/plus.png"></image>
-    <input type="text" placeholder="Anything here..." />
+    <image src="../../assets/plus.png" bindtap="addTodosHandle"></image>
+    <input type="text" value="{{ input }}" bindinput="inputChangeHandle" placeholder="Anything here..." bindconfirm="addTodosHandle" />
   </view>
-  <view class="middle">
-    <view class="item completed">
-      <icon class="checkbox" type="success"></icon>
-      <text class="name">sf</text>
-      <icon class="remove" size="16" type="clear"></icon>
+  <block wx:if="{{ todos.length  }}">
+    <view class="middle">
+      <view 
+        class="item {{ item.completed ? 'completed' : '' }}" 
+        wx:for="{{ todos }}" 
+        wx:key="{{ index }}"
+        bind:tap="toggleTodoHandle"
+        data-index="{{ index }}">
+        <icon class="checkbox" type="{{ item.completed ? 'success' : 'circle' }}"></icon>
+        <text class="name">{{ item.name }}</text>
+        <icon class="remove" size="16" type="clear" catchtap="removeTodoHandle" data-index="{{ index }}"></icon>
+      </view>
     </view>
-    <view class="item">
-      <icon class="checkbox" type="circle"></icon>
-      <text class="name">sf</text>
-      <icon class="remove" size="16" type="clear"></icon>
+    <view class="bottom">
+      <text bindtap="togglAllHandle">Toggle all</text>
+      <text wx:if="{{ currNum == 0 ? false : true }}">{{ currNum }} {{ currNum > 1 ? 'items' : 'item' }} left</text>
+      <text bindtap="clearCompletedHandle" wx:if="{{todos.length > currNum}}">Clear completed</text>
     </view>
-    <view class="item">
-      <icon class="checkbox" type="circle"></icon>
-      <text class="name">sf</text>
-      <icon class="remove" size="16" type="clear"></icon>
+  </block>
+  <block wx:else>
+    <view class="empty">
+      <text class="title">Congratulations!</text>
+      <text class="content">There's no more work left.</text>
     </view>
-  </view>
-  <view class="bottom">
-    <text>Toggle all</text>
-    <text>1 item left</text>
-    <text>Clear completed</text>
-  </view>
+  </block>
 </view>
