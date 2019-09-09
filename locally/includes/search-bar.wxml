@@ -2,7 +2,7 @@
   <view class="weui-search-bar__form">
     <view class="weui-search-bar__box">
       <icon class="weui-icon-search_in-box" type="search" size="14"/>
-      <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{searchText}}" focus="{{searchShowed}}" bindinput="searchChangeHandle" bindconfirm="searchHandle"/>
+      <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{searchText}}" focus="{{searchShowed}}" bindinput="searchChangeHandle" bindconfirm="searchHandle" />
       <view class="weui-icon-clear" wx:if="{{searchText}}" bindtap="clearSearchHandle">
         <icon type="clear" size="14"/>
       </view>

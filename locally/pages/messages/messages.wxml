@@ -1,2 +1,14 @@
-<!--pages/messages/messages.wxml-->
-<text>pages/messages/messages.wxml</text>
+<view class="messages">
+  <view class="item" wx:for="{{messages}}" wx:key="id">
+    <navigator>
+      <text class="title">{{item.title}}</text>
+    </navigator>
+    <text class="date">{{item.date}}</text>
+    <navigator>
+      <image src="{{item.image}}"/>
+    </navigator>
+    <text class="summary">{{item.summary}}</text>
+    <navigator class="expand">Read All</navigator>
+  </view>
+</view>
+<view id="bottom"></view>
